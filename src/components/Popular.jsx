@@ -43,6 +43,21 @@ function Popular() {
             pagination: false,
             drag: 'free',
             gap: "3rem",
+
+            breakpoints: {
+                1024: {
+                    perPage: 3,
+                    gap: "2rem",
+                },
+                540: {
+                    perPage: 2,
+                    gap: "2rem",
+                },
+                450: {
+                    perPage: 2,
+                    gap: "1rem",
+                }
+          }
         }}>
         {popular.map(recipes => {
             return (
@@ -95,6 +110,25 @@ const Card = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    @media only screen and (max-width: 912px) {
+        min-height: 15rem;
+
+        p{
+            left: 3%;
+            transform: none;
+        }
+    }
+
+    @media only screen and (max-width: 540px) {
+        p{
+            font-size: 0.8rem;
+        }
+    }
+    
+    @media only screen and (max-width: 912px) {
+        min-height: 10rem;
     }
 `
 const Gradient = styled.div`

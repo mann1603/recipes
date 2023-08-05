@@ -42,6 +42,20 @@ function Veggie() {
             pagination: false,
             drag: 'free',
             gap: "5rem",
+            breakpoints: {
+                1024: {
+                    perPage: 2,
+                    gap: "3rem",
+                },
+                540: {
+                    perPage: 2,
+                    gap: "2rem",
+                },
+                450: {
+                    perPage: 2,
+                    gap: "1rem",
+                }
+          }
         }}>
         {veggie.map(recipes => {
             return (
@@ -93,6 +107,26 @@ const Card = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    @media only screen and (max-width: 912px) {
+        min-height: 21rem;
+    }
+    @media only screen and (max-width: 540px) {
+        min-height: 15rem;
+
+        p{
+            font-size: 0.8rem;
+        }
+    }
+
+    @media only screen and (max-width: 450px) {
+        min-height: 11rem;
+
+        p{
+            font-size: 0.8rem;
+            transform: translate(-50%, -20%);
+        }
     }
 `
 const Gradient = styled.div`

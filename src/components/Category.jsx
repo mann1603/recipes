@@ -32,6 +32,15 @@ const List = styled.div`
     display: flex;
     justify-content: center;
     margin: 2rem 0rem;
+
+    @media only screen and (max-width: 450px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 2rem 11rem;
+    }
+    @media only screen and (max-width: 380px) {
+        margin: 2rem 10rem;
+    }
 `
 const Slink = styled(NavLink)`
     display: flex;
@@ -40,6 +49,7 @@ const Slink = styled(NavLink)`
     justify-content: center;
     border-radius: 50%;
     margin-right: 2rem;
+    margin-bottom: 1rem;
     text-decoration: none;
     background: linear-gradient(35deg, #494949, #313131);
     width: 5rem;
@@ -64,6 +74,8 @@ const Slink = styled(NavLink)`
             color: white;
         }
     }
+
+   
 `
 
 export default Category

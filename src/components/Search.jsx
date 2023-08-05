@@ -69,5 +69,15 @@ const FontStyle = styled.form`
         color: white;
         cursor: pointer;
     }
+    
+    @media only screen and (min-width: 1024px) {
+        margin: 0rem 7rem;
+    }
+    @media only screen and (max-width: 912px) {
+        margin: 0rem 3rem;
+    }
+    @media only screen and (max-width: 450px) {
+        margin: 0rem 0rem;
+    }
 `
 export default Search
