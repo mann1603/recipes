@@ -39,17 +39,19 @@ function Recipe() {
         </div>
 
         <Info>
-            <Button 
-                className= {activeTab === 'instructions' ? 'active' : ''} 
-                onClick={() => setActiveTab("instructions")}
-            >Instructions
-            </Button>
-            <Button 
-                className= {activeTab === 'ingredients' ? 'active' : ''} 
-                onClick={() => setActiveTab("ingredients")}
-            >
-                Ingredients
-            </Button>
+            <Wrapper>
+                <Button 
+                    className= {activeTab === 'instructions' ? 'active' : ''} 
+                    onClick={() => setActiveTab("instructions")}
+                >Instructions
+                </Button>
+                <Button 
+                    className= {activeTab === 'ingredients' ? 'active' : ''} 
+                    onClick={() => setActiveTab("ingredients")}
+                >
+                    Ingredients
+                </Button>
+            </Wrapper>
 
             {activeTab === 'instructions' && (
                  <div>
@@ -94,6 +96,35 @@ const DetailWrapper = styled(motion.div)`
     ul{
         margin-top: 2rem;
     }
+
+    @media only screen and (max-width: 450px) {
+        flex-direction: column;
+        margin-top: 4rem;
+        img{
+            width: 100%;
+        }
+    }
+    `
+const Info = styled.div`
+    margin-left: 10rem;
+
+    @media only screen and (max-width: 450px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: unset;
+    }
+
+
+`
+const Wrapper = styled.div`
+    @media only screen and (max-width: 450px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+    }
 `
 const Button = styled.button`
     padding: 1rem 2rem;
@@ -103,9 +134,10 @@ const Button = styled.button`
     margin-right: 2rem;
     font-weight: 600;
     cursor: pointer;
-`
-const Info = styled.div`
-    margin-left: 10rem;
+
+    @media only screen and (max-width: 450px){
+        margin: unset;
+    }
 `
 
 export default Recipe
